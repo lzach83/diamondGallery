@@ -20,7 +20,9 @@ export default function Gallery() {
   const [loading, setLoading] = React.useState<boolean>(true);
 
   const handleImages = async () => {
-    const res = await fetch("http://localhost:8080/getImages");
+    const res = await fetch(
+      "https://diamond-gallery-r2a2.vercel.app/getImages"
+    );
     return res.json();
   };
 

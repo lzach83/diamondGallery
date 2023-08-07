@@ -18,10 +18,13 @@ export default function UploadButton() {
       formData.append("file", selectedFile);
 
       try {
-        const result = await fetch("http://localhost:8080/uploadImage", {
-          method: "POST",
-          body: formData,
-        });
+        const result = await fetch(
+          "https://diamond-gallery-r2a2.vercel.app/uploadImage",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
         const data = await result.json();
 

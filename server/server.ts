@@ -23,5 +23,3 @@ app.use((_req, res) => {
 });
 
 app.listen(port, () => console.log(`APP ON ${port}`));
-
-module.exports = app;

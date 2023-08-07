@@ -11,6 +11,12 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 app.use(bodyParser.raw({ type: "image/*", limit: "10mb" }));
 
+app.use(
+  cors({
+    origin: "https://diamond-gallery-6ibg.vercel.app",
+  })
+);
+
 app.use("/", routes);
 
 // Global error handling

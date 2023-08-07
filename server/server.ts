@@ -13,7 +13,12 @@ app.use(bodyParser.raw({ type: "image/*", limit: "10mb" }));
 
 /* app.use(cors({ credentials: true, origin: true })); */
 
-app.use(cors({ origin: "*" }));
+app.use(cors());
+
+app.use((_req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 app.use("/", routes);
 

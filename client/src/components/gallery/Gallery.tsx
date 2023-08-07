@@ -21,7 +21,12 @@ export default function Gallery() {
 
   const handleImages = async () => {
     const res = await fetch(
-      "https://diamond-gallery-r2a2.vercel.app/getImages"
+      "https://diamond-gallery-r2a2.vercel.app/getImages",
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
     return res.json();
   };

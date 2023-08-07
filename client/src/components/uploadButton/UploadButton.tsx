@@ -23,6 +23,9 @@ export default function UploadButton() {
           {
             method: "POST",
             body: formData,
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+            },
           }
         );
 

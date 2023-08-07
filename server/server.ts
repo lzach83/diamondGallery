@@ -27,7 +27,6 @@ app.use(express.json());
 // app.use(express.urlencoded({ extended: true }))
 app.use(cors(corsOptionsDelegate));
 
-app.use(cors());
 app.use(express.json());
 app.use(bodyParser.raw({ type: "image/*", limit: "10mb" }));
 

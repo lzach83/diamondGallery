@@ -1,10 +1,5 @@
 import express from "express";
 import { db } from "../db/conn";
-import {
-  UploadcareAuthSchema,
-  listOfFiles,
-  fileInfo,
-} from "@uploadcare/rest-client";
 import { uploadDirect } from "@uploadcare/upload-client";
 import multer = require("multer");
 

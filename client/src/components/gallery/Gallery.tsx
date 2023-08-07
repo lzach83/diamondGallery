@@ -13,6 +13,8 @@ interface Image {
   };
 }
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export default function Gallery() {
   const [image, setImage] = React.useState<Array<Image>>();
   const [modalOpen, setModalOpen] = React.useState<boolean>(false);
@@ -20,9 +22,7 @@ export default function Gallery() {
   const [loading, setLoading] = React.useState<boolean>(true);
 
   const handleImages = async () => {
-    const res = await fetch(
-      "https://diamond-gallery-r2a2.vercel.app/getImages"
-    );
+    const res = await fetch(`${apiUrl}/getImages`);
     return res.json();
   };
 
@@ -67,7 +67,7 @@ export default function Gallery() {
           {image &&
             image.map((item, index) => (
               <img
-                className="object-cover h-1/2 w-full pt-3"
+                className="object-cover h-full w-full pt-3"
                 key={index}
                 loading="lazy"
                 src={`data:image/jpeg;base64,${item.image.buffer}`}

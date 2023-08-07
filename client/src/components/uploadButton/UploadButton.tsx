@@ -1,5 +1,7 @@
 import React from "react";
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export default function UploadButton() {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
@@ -18,16 +20,10 @@ export default function UploadButton() {
       formData.append("file", selectedFile);
 
       try {
-        const result = await fetch(
-          "https://diamond-gallery-r2a2.vercel.app/uploadImage",
-          {
-            method: "POST",
-            body: formData,
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-            },
-          }
-        );
+        const result = await fetch(`${apiUrl}/uploadImage`, {
+          method: "POST",
+          body: formData,
+        });
 
         const data = await result.json();
 

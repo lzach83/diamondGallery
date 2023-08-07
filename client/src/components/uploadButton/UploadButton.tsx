@@ -19,7 +19,7 @@ export default function UploadButton() {
 
       try {
         const result = await fetch(
-          "http://diamond-gallery-r2a2.vercel.app/uploadImage",
+          "https://diamond-gallery-r2a2.vercel.app/uploadImage",
           {
             method: "POST",
             body: formData,

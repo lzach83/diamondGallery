@@ -15,11 +15,6 @@ app.use(bodyParser.raw({ type: "image/*", limit: "10mb" }));
 
 app.use(cors());
 
-app.use((_req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
-
 app.use("/", routes);
 
 // Global error handling

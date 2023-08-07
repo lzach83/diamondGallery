@@ -5,6 +5,7 @@
     "outDir": "dist",
     "lib": ["esnext"],
     "module": "nodenext",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true
   }
 }
